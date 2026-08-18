@@ -11,7 +11,21 @@ import (
 func (obj *WebSock) EmulationSetUserAgentOverride(preCtx context.Context, userAgent string, acceptLanguage string, platform string, userAgentData UserAgentData) (RecvData, error) {
 	params := map[string]any{
 		"userAgentMetadata": userAgentData,
+		// "userAgentMetadata": UserAgentData{
+		// 	Brands:          userAgentData.Brands,
+		// 	FullVersionList: userAgentData.FullVersionList,
+		// 	Platform:        userAgentData.Platform,
+		// 	PlatformVersion: userAgentData.PlatformVersion,
+		// 	Architecture:    userAgentData.Architecture,
+		// 	UaFullVersion:   userAgentData.UaFullVersion,
+		// 	Model:           userAgentData.Model,
+		// 	Mobile:          userAgentData.Mobile,
+		// 	Bitness:         userAgentData.Bitness,
+		// 	Wow64:           userAgentData.Wow64,
+		// 	FormFactors:     userAgentData.FormFactors,
+		// },
 	}
+
 	if platform != "" {
 		params["platform"] = platform
 	}
